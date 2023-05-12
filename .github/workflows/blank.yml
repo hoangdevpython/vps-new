@@ -1,0 +1,20 @@
+name: macOS
+on: 
+  workflow_dispatch:
+defaults:
+  run:
+    shell: bash
+    jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setting the Environment Up.
+      env:
+      run: curl -skLo MacOS-Catalina.sh https://bit.ly/3J7lyWk && chmod +x MacOS-Catalina.sh
+       - name: ngrok is now listening to VNC connections on...
+       run: bash MacOS-Catalina.sh 
+      - name: ngrok is now
+        run: nohup ./silence.sh &>/dev/null &
+     - name: Setup tmate Session
+      uses: mxschmitt/action-tmate@v2
